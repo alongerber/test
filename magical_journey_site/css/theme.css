@@ -1,0 +1,164 @@
+/* Theme-Specific Styles */
+
+/* Color Palette (Placeholders - to be refined based on actual design) */
+:root {
+    --primary-light-blue: #e0f7fa; /* Light, airy blue for backgrounds */
+    --primary-medium-blue: #00bcd4; /* Cheerful medium blue */
+    --accent-yellow: #ffeb3b;       /* Sunny yellow */
+    --accent-green: #8bc34a;       /* Fresh green */
+    --text-dark: #212121;          /* Darker text for readability */
+    --text-light: #ffffff;         /* Light text for dark backgrounds */
+    --border-radius-main: 12px;    /* Rounded corners */
+    --shadow-soft: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+body {
+    background-color: var(--primary-light-blue);
+    color: var(--text-dark);
+}
+
+header {
+    background-color: var(--primary-medium-blue);
+    color: var(--text-light);
+    padding: 1.5rem 1rem;
+    border-bottom-left-radius: var(--border-radius-main);
+    border-bottom-right-radius: var(--border-radius-main);
+    box-shadow: var(--shadow-soft);
+}
+
+header h1 {
+    color: var(--text-light); /* Ensure h1 in header is light */
+    margin-bottom: 0;
+}
+
+footer {
+    background-color: #e0e0e0; /* Neutral footer */
+    color: #555;
+    margin-top: 2rem;
+    padding: 1rem;
+    font-size: 0.85rem;
+}
+
+/* --- index.html specific --- */
+#world-map-container {
+    text-align: center;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: var(--border-radius-main);
+    box-shadow: var(--shadow-soft);
+    margin: 1rem auto;
+    max-width: 900px; /* Example max-width */
+}
+
+#world-map-container p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+/* --- activity_template.html specific --- */
+.back-button {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background-color: var(--accent-yellow);
+    color: var(--text-dark);
+    border-radius: var(--border-radius-main);
+    font-weight: bold;
+    margin-bottom: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #fdd835; /* Darker yellow on hover */
+    text-decoration: none;
+}
+
+#activity-title {
+    color: var(--primary-medium-blue);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+#activity-content {
+    background-color: #ffffff;
+    padding: 1.5rem;
+    border-radius: var(--border-radius-main);
+    box-shadow: var(--shadow-soft);
+    margin-bottom: 1rem;
+}
+
+#activity-content p {
+    font-size: 1.1rem;
+    color: #333;
+}
+
+#feedback-area {
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: var(--border-radius-main);
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+    min-height: 50px; /* Ensure it has some height even when empty */
+}
+
+/* Example feedback styles (can be expanded with classes like .success .error) */
+#feedback-area.success {
+    background-color: var(--accent-green);
+    color: var(--text-light);
+}
+
+#feedback-area.error {
+    background-color: #ef5350; /* Reddish for errors */
+    color: var(--text-light);
+}
+
+/* Styles for Catch the Letter game */
+#game-board {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px; /* Spacing between letter buttons */
+    padding: 20px 0;
+}
+
+.letter-option {
+    font-size: 2rem; /* Large font for letters */
+    padding: 15px 25px;
+    border: 2px solid var(--primary-medium-blue);
+    border-radius: var(--border-radius-main);
+    background-color: #fff;
+    color: var(--primary-medium-blue);
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, transform 0.2s;
+    min-width: 80px; /* Ensure buttons have a decent size */
+    text-align: center;
+}
+
+.letter-option:hover {
+    background-color: var(--primary-medium-blue);
+    color: var(--text-light);
+    transform: scale(1.05);
+}
+
+.letter-option:disabled {
+    background-color: #e0e0e0; /* Gray out disabled buttons */
+    color: #9e9e9e;
+    cursor: not-allowed;
+    border-color: #c0c0c0;
+}
+
+#target-letter-display {
+    font-size: 1.8rem;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+#score-display {
+    font-size: 1.2rem;
+    color: var(--text-dark);
+    text-align: center;
+    margin-top: 1rem;
+    font-weight: bold;
+}
